@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang ="en-us" ng-app = "angularTest">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta charset ="UTF-8">
+        <meta name="viewport" content="width=device-width"/>
+
+<title>Multiply Inputs</title>
+
+<link rel="stylesheet"  href="http://netdna.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="./styles.css">
+<script src= "https://code.angularjs.org/1.7.8/angular.min.js" ></script>
+<script src = "app.js"></script>
+</head>
+
+<body ng-controller = "mainController">
+<header>
+         <!-- NAV BAR -->
+        <nav class="navbar navbar-default bg-dark navbar-dark">
+                <a class="navbar-brand" href="#">Multiply Inputs</a>
+        </nav>
+</header>
+
+<div class = "container">
+<div class="col-sm-8 col-sm-offset-2">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header"><h1>Multiply Input</h1></div>
+
+    <!-- FORM -->
+    <form name="userForm" ng-submit="calculateForm(userForm.$valid ,userObject)" novalidate  
+    ng-init = "userForm.$invalid ? (disableButton = false) : (disableButton = true) ">
+        <!-- INPUT1 -->
+        <div class="form-group">
+            <label>INPUT 1</label>
+            <input type="text"
+             name="Input1"
+             class="form-control"
+             ng-class="{'style-change': userObject.num1 ? false : true  }"
+               ng-model="userObject.num1" 
+               ng-change = "validateValue(userForm)"
+               ng-pattern="/^[0-9]*$/"
+               required>
+        </div>
+
+        <!-- INPUT2 -->
+        <div class="form-group">
+            <label>INPUT 2</label>
+            <input type="text"
+             name="Input2"
+             class="form-control" 
+             ng-class="{'style-change': userObject.num2 ? false : true}"
+             ng-model="userObject.num2"
+             ng-change = "validateValue(userForm);" 
+             ng-pattern="/^[0-9]*$/"
+             required>
+        </div>
+          <!-- CUSTOM DIRECTIVE -->
+      
+        <multiply-directive user-object="userObject"></multiply-directive>
+      
+        <!-- CALCULATE BUTTON -->
+        <button type="submit" 
+        ng-disabled ="disableButton"
+         class="btn btn-primary">Calculate</button>
+    </form>
+
+</div><!-- col-sm-8 -->
+
+
+</div>
+</body>
+</html>
