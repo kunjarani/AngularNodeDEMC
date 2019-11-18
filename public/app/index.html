@@ -28,8 +28,7 @@
     <div class="page-header"><h1>Multiply Input</h1></div>
 
     <!-- FORM -->
-    <form name="userForm" ng-submit="calculateForm(userForm.$valid ,userObject)" novalidate  
-    ng-init = "userForm.$invalid ? (disableButton = false) : (disableButton = true) ">
+    <form name="userForm" ng-submit="calculateForm(userForm.$valid ,userObject)" novalidate >
         <!-- INPUT1 -->
         <div class="form-group">
             <label>INPUT 1</label>
@@ -56,12 +55,12 @@
              required>
         </div>
           <!-- CUSTOM DIRECTIVE -->
-      
-        <multiply-directive user-object="userObject"></multiply-directive>
+
+         <multiply-directive></multiply-directive> 
       
         <!-- CALCULATE BUTTON -->
         <button type="submit" 
-        ng-disabled ="disableButton"
+        ng-disabled ="disableButton || userForm.$invalid"
          class="btn btn-primary">Calculate</button>
     </form>
 

@@ -18,6 +18,7 @@ angularTest.service("mainService", function($http){
 angularTest.controller("mainController",["$scope","$log","mainService",function($scope,$log,mainService){
    $scope.user = [];
 
+
     //OnLoad getdata    
    mainService.getData().then(function successCallback(result){
        $scope.user = result.data;
@@ -27,6 +28,7 @@ angularTest.controller("mainController",["$scope","$log","mainService",function(
       $scope.user = [];
       $scope.userObject = {};
    });
+
 
    //function to validate the Inputs and disable the button      
    $scope.validateValue = function(userform){
@@ -49,6 +51,7 @@ angularTest.controller("mainController",["$scope","$log","mainService",function(
 
   // check to make sure the form is completely valid
   if (isValid) {
+    $scope.userObject.multiply = $scope.userObject.num1 * $scope.userObject.num2;
     $scope.userObject.id = $scope.user.length;
     mainService.saveData($scope.userObject).then(function successCallback(result){
       return result;
@@ -68,21 +71,7 @@ angularTest.directive("multiplyDirective",function(){
    return{
            restrict:'E',
            template: '<p>Multiply:{{userObject.multiply}}</p>',
-           replace: true,
-         //   scope:{
-         //    userObjectVar : "=userObject"
-         //   },
-         //   link : function(scope){
-         //      console.log("scope",scope);
-         //    scope.userObjectVar.multiply = scope.userObjectVar.num1 * scope.userObjectVar.num2;
-
-         //   },
-         //   controller:  function(scope) {
-
-         //    console.log("scope",scope);
-         //      scope.userObjectVar.multiply = scope.userObjectVar.num1 * scope.userObjectVar.num2;
-         //   }
-         
+           replace: true
 
    }
 
