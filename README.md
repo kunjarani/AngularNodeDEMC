@@ -20,22 +20,23 @@ Installation of AngularNodeDEMC
 
 # Setup
 
-1. create a folder " AngularNodeDEMC ".
-2. Move into the folder " cd AngularNodeDEMC "
+1. create a new folder .
+2. Move into the folder " cd your_foldername ".
 
 3. Run the below command to clone the repsitory:
 
      git clone https://github.com/kunjarani/AngularNodeDEMC.git
 
-4. Run " npm install " in folder AngularNodeDEMC/
-5. This is get the node modules and dependencies.
-6. NodeJS dependency: express , ejs ,body-parser,mongoose 
-7. Run " ls " . You should see " node_modules "  folder .
-8. After node_modules are created in folder " AngularNodeDEMC/ ", move to " public " folder.
-9. Run " cd public " .
-10. Run " npm install " . path : " AngularNodeDEMC/public "
-11. This is get the node modules and dependencies for angularjs.
-12. AngularJs dependency : angular , angular-mocks , karma karma-chrome-launcher karma-jasmine ,            karma-cli
+4. This creates a new folder " AngularNodeDEMC " containg code.
+5. Run " npm install " in folder AngularNodeDEMC/
+6. This is get the node modules and dependencies.
+7. NodeJS dependency: express , ejs ,body-parser,mongoose 
+8. Run " ls " . You should see " node_modules "  folder .
+9. After node_modules are created in folder " AngularNodeDEMC/ ", move to " public " folder.
+10. Run " cd public " .
+11. Run " npm install " . path : " AngularNodeDEMC/public "
+12. This is get the node modules and dependencies for angularjs.
+13. AngularJs dependency : angular , angular-mocks , karma karma-chrome-launcher karma-jasmine ,            karma-cli
 
 MongoDB dependency:
 
